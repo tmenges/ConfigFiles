@@ -20,16 +20,18 @@ case $(hostname -s) in
     [ -f "/home/tony/.ghcup/env" ] && source "/home/tony/.ghcup/env" # ghcup-env
     ;;
   "tony-mbp")
-    export PATH="/opt/X11/bin:$PATH"
-    export PATH="/Library/TeX/textbin:$PATH"
-    export PATH="$HOME/usr/local/go/bin:$PATH"
-    export PATH="$HOME/.opam/default/bin:$PATH"
-    export PATH="$HOME/opt/anaconda3/bin:$HOME/tony/opt/condabin:$PATH"
-    export PATH="$HOME/tony/.cabal/bin:$HOME/.ghcup/bin:$PATH"
-    export PATH="$HOME/.cargo/bin:$PATH"
-    export PATH="$HOME/.emacs.d/bin:$PATH"
-    export PATH="$HOME/.local/bin:$PATH"
-    export PATH="$HOME/bin:$PATH"
+    pathadd "/opt/X11/bin"
+    pathadd "/Library/TeX/textbin"
+    pathadd "$HOME/usr/local/go/bin"
+    pathadd "$HOME/.opam/default/bin"
+    pathadd "$HOME/tony/opt/condabin"
+    pathadd "$HOME/opt/anaconda3/bin"
+    pathadd "$HOME/.ghcup/bin"
+    pathadd "$HOME/tony/.cabal/bin:"
+    pathadd "$HOME/.cargo/bin"
+    pathadd "$HOME/.emacs.d/bin"
+    pathadd "$HOME/.local/bin"
+    pathadd "$HOME/bin"
     ;;
   *) 
     export PATH="$HOME/.local/bin:$PATH"

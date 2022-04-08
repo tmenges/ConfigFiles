@@ -32,6 +32,7 @@ autoload -U compinit && compinit
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
+source $ZDOTDIR/zsh-functions
 source $ZDOTDIR/zsh-options
 source $ZDOTDIR/zsh-aliases
 
@@ -39,21 +40,19 @@ source $ZDOTDIR/zsh-aliases
 bindkey -v
 bindkey '^u' backward-kill-line
 
-ulimit -c unlimited
-
 
 if [[ "$OSTYPE" = darwin* ]]; then
     # Override oh-my-zsh's use of gls if it is available (see .oh-my-zsh/lib/theme-and-appearance.zsh)
     alias ls='ls -G'
-    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    test -e "$HOME/.iterm2_shell_integration.zsh" && source "$HOME/.iterm2_shell_integration.zsh"
 else
 #    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
 # . /Users/tony/anaconda3/etc/profile.d/conda.sh  # commented out by conda initialize
 
-# opam configuration
-test -r /Users/tony/.opam/opam-init/init.zsh && . /Users/tony/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# opam (OCaml) configuration
+test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
