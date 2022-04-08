@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+alias vi=vim
+alias r="source $ZDOTDIR/.zshrc"
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+alias kc="kubectl"
+alias mkc='minikube kubectl -- '
+alias mk='minikube'
+alias h=history
+alias hg='history | grep'
+alias ec='emacsclient --create-frame --alternate-editor=""'
+alias showpath="echo $PATH | tr ':' '\n'"
+
+if [[ "$OSTYPE" = darwin* ]]; then
+    # Override oh-my-zsh's use of gls if it is available (see .oh-my-zsh/lib/theme-and-appearance.zsh)
+    alias ls='ls -G'
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi

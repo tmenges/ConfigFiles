@@ -1,0 +1,61 @@
+#!/usr/bin/env zsh
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+export DEFAULT_USER=tony
+
+export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000                   # Maximum events in history file
+
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+export GREP_COLOR='1;32'
+export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
+
+# fzf
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
+export FZF_DEFAULT_OPTS='--height 60% --border sharp --color="bg+:0,border:248,spinner:12,hl:11,header:249,info:15,pointer:12,marker:12,prompt:12,hl+:9"'
+# export FZF_CTRL_T_COMM AND="$FZF_DEFAULT_COMMAND"
+# export FZF_CTRL_T_OPTS=""
+# export FZF_CTRL_R_OPTS=""
+# export FZF_ALT_C_COMMAND=
+# export FZF_ALT_C_OPTS=
+
+# PATH
+#export PATH="$HOME/bin:$PATH"
+#export PATH="$HOME/usr/local/go/bin:$PATH"
+#export PATH="$HOME/.cargo/bin:$PATH"
+#export PATH="$HOME/tony/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+#export PATH="$HOME/opt/anaconda3/bin:$HOME/tony/opt/condabin:$PATH"
+#export PATH="$HOME/.opam/default/bin:$PATH"
+#export PATH="$HOME/.emacs.d/bin:$PATH"
+#export PATH="/Library/TeX/textbin:$PATH"
+#export PATH="/opt/X11/bin:$PATH"
+
+case $(hostname -s) in
+  "penguin-traveler")
+    export TEXLIVE=/usr/local/texlive/2017
+    export NPM_PACKAGES=${HOME}/.npm-packages
+    export GOPATH=$HOME/Development/Workspaces/go
+    export PGHOME=/usr/local/pgsql
+    export GOROOT=/usr/local/go
+    export QTHOME=/usr/local/Qt
+    export GNATHOME=/usr/local/gnat-2020
+    #export DOCKER_HOST=tcp://localhost:2375
+    export ANACONDAHOME=$HOME/anaconda3
+    ;;
+  "tony-mbp")
+    export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
+    export JAVA_HOME_11=$(/usr/libexec/java_home -v11)
+    export JAVA_HOME_13=$(/usr/libexec/java_home -v13)
+    export JAVA_HOME=$JAVA_HOME_13
+
+    export GOPATH=$HOME/Development/Workspaces/go
+    export GOROOT=/usr/local/Cellar/go/1.17.8
+
+    source $HOME/.ghcup/env
+    export ANACONDAHOME=$HOME/opt/anaconda3
+    ;;
+esac

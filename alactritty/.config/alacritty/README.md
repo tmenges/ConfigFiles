@@ -1,0 +1,2 @@
+# Configuration for Alacritty terminal
+

@@ -1,0 +1,40 @@
+#!/usr/bin/env zsh
+
+source $ZDOTDIR/zsh-functions
+
+case $(hostname -s) in
+  "penguin-traveler")
+    pathremove $HOME/bin
+    pathadd $TEXLIVE/bin/x86_64-linux before
+    #pathadd $GNATHOME/gnatstudio/bin before
+    pathadd $QTHOME/bin before
+    pathadd $PGHOME/bin before
+    pathadd $GOROOT/bin before
+    pathadd $GOPATH/bin before
+    pathadd $HOME/.cargo/bin before
+    pathadd $NPM_PACKAGES/bin before
+    pathadd $HOME/.emacs.d/bin before
+    pathadd $HOME/.local/bin before
+    pathadd $HOME/bin before
+
+    [ -f "/home/tony/.ghcup/env" ] && source "/home/tony/.ghcup/env" # ghcup-env
+    ;;
+  "tony-mbp")
+    export PATH="/opt/X11/bin:$PATH"
+    export PATH="/Library/TeX/textbin:$PATH"
+    export PATH="$HOME/usr/local/go/bin:$PATH"
+    export PATH="$HOME/.opam/default/bin:$PATH"
+    export PATH="$HOME/opt/anaconda3/bin:$HOME/tony/opt/condabin:$PATH"
+    export PATH="$HOME/tony/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+    export PATH="$HOME/.cargo/bin:$PATH"
+    export PATH="$HOME/.emacs.d/bin:$PATH"
+    export PATH="$HOME/.local/bin:$PATH"
+    export PATH="$HOME/bin:$PATH"
+    ;;
+  *) 
+    export PATH="$HOME/.local/bin:$PATH"
+    export PATH="$HOME/.emacs.d/bin:$PATH"
+    export PATH="$HOME/bin:$PATH"
+    ;;
+esac
+  

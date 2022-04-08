@@ -1,0 +1,78 @@
+# Function to source files if they exist
+function zsh_add_file() {
+    [ -f "$ZDOTDIR/$0" ] && source "$ZDOTDIR/$1"
+}
+
+function zsh_add_plugin() {
+    PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
+    if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then 
+        # For plugins
+        zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
+        zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+    else
+        git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+    fi
+}
+
+function zsh_add_completion() {
+    PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
+    if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then 
+        # For completions
+		completion_file_path=$(ls $ZDOTDIR/plugins/$PLUGIN_NAME/_*)
+		fpath+="$(dirname "${completion_file_path}")"
+        zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh"
+    else
+        git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+		fpath+=$(ls $ZDOTDIR/plugins/$PLUGIN_NAME/_*)
+        [ -f $ZDOTDIR/.zccompdump ] && $ZDOTDIR/.zccompdump
+    fi
+	completion_file="$(basename "${completion_file_path}")"
+	if [ "$2" = true ] && compinit "${completion_file:1}"
+}
+
+_fzf_comprun() {
+    local command=$1
+    shift
+
+    case "$command" in
+        cd)         fzf "$@" --preview 'tree -C {} | head -200' ;;
+        *)          fzf "$@" ;;
+    esac
+}
+
+function hc() {
+    history | grep "^[[:space:]]*[0-9]*[[:space:]]*$@"
+}
+
+function pathadd() {
+    if ! echo "$PATH" | /usr/bin/grep -Eq "(^|:)$1($|:)" ; then
+        if [ "$2" = "after" ] ; then
+            export PATH="$PATH:$1"
+        else
+            export PATH="$1:$PATH"
+        fi
+    fi
+}
+
+function pathremove() {
+  PATH=:$PATH:
+  PATH=$(echo $PATH | sed -e "s?:$1:?:?")
+  PATH=$(echo $PATH | sed -e 's?^:??;s?:$??')
+}
+
+# Tmux
+# Makes creating a new tmux session (with a specific name) easier
+function tmuxopen() {
+  tmux attach -t $1
+}
+
+# Makes creating a new tmux session (with a specific name) easier
+function tmuxnew() {
+  tmux new -s $1
+}
+
+# Makes deleting a tmux session easier
+function tmuxkill() {
+  tmux kill-session -t $1
+}
+
