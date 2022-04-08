@@ -23,17 +23,6 @@ export FZF_DEFAULT_OPTS='--height 60% --border sharp --color="bg+:0,border:248,s
 # export FZF_ALT_C_COMMAND=
 # export FZF_ALT_C_OPTS=
 
-# PATH
-#export PATH="$HOME/bin:$PATH"
-#export PATH="$HOME/usr/local/go/bin:$PATH"
-#export PATH="$HOME/.cargo/bin:$PATH"
-#export PATH="$HOME/tony/.cabal/bin:$HOME/.ghcup/bin:$PATH"
-#export PATH="$HOME/opt/anaconda3/bin:$HOME/tony/opt/condabin:$PATH"
-#export PATH="$HOME/.opam/default/bin:$PATH"
-#export PATH="$HOME/.emacs.d/bin:$PATH"
-#export PATH="/Library/TeX/textbin:$PATH"
-#export PATH="/opt/X11/bin:$PATH"
-
 case $(hostname -s) in
   "penguin-traveler")
     export TEXLIVE=/usr/local/texlive/2017
