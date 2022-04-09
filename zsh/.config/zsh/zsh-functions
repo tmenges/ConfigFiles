@@ -60,6 +60,14 @@ function pathremove() {
   PATH=$(echo $PATH | sed -e 's?^:??;s?:$??')
 }
 
+function showpath() {
+  if [ $# -eq 0 ]; then
+    echo $PATH | tr ':' '\n'
+  else
+    echo $1 | tr ':' '\n'
+  fi
+}
+
 # Tmux
 # Makes creating a new tmux session (with a specific name) easier
 function tmuxopen() {

@@ -11,7 +11,6 @@ alias mk='minikube'
 alias h=history
 alias hg='history | grep'
 alias ec='emacsclient --create-frame --alternate-editor=""'
-alias showpath="echo $PATH | tr ':' '\n'"
 
 if [[ "$OSTYPE" = darwin* ]]; then
     # Override oh-my-zsh's use of gls if it is available (see .oh-my-zsh/lib/theme-and-appearance.zsh)
