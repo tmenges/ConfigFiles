@@ -1,5 +1,8 @@
 .DS_Store
 
+# nvim packages
+pack
+
 # Compiled Lua sources
 luac.out
 

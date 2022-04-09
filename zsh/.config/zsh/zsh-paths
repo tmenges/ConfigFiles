@@ -27,7 +27,7 @@ case $(hostname -s) in
     pathadd "$HOME/tony/opt/condabin"
     pathadd "$HOME/opt/anaconda3/bin"
     pathadd "$HOME/.ghcup/bin"
-    pathadd "$HOME/tony/.cabal/bin:"
+    pathadd "$HOME/tony/.cabal/bin"
     pathadd "$HOME/.cargo/bin"
     pathadd "$HOME/.emacs.d/bin"
     pathadd "$HOME/.local/bin"
