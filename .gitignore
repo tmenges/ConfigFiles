@@ -52,3 +52,5 @@ plugin/packer_compiled.lua
 .zsh_history
 .zsh_history
 plugins/
+vim/.vim/.netrwhist
+regolith/.config/regolith/flags/

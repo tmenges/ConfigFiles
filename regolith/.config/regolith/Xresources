@@ -1,0 +1,15 @@
+i3-wm.font: pango:Source Code Pro Medium 13
+i3-wm.bar.font: pango:Source Code Pro Medium 6, Material Design Icons 12 
+i3-wm.bar.position:	top
+i3-wm.bar.separator: " "
+!i3-wm.bar.status_command: i3status
+i3xrocks.date.format2: %m-%d-%y %I:%M%P
+
+i3-wm.window.border.size: 5
+
+!i3-wm.client.focused.color.border: #ff0000
+!i3-wm.client.focused.color.background: #00ff00
+i3-wm.client.focused.color.indicator: #ff0000
+!i3-wm.client.focused.color.text: #0000ff
+i3-wm.client.focused.color.child_border: #0000ff
+
