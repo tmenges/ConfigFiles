@@ -239,6 +239,16 @@ bindsym $mod+$i3-wm.binding.move_down move down
 bindsym $mod+$i3-wm.binding.move_up move up
 bindsym $mod+$i3-wm.binding.move_right move right
 
+## Move window to next/prev workspace
+set_from_resource $i3-wm.binding.prev i3-wm.binding.move_prev bracketleft
+set_from_resource $i3-wm.binding.next i3-wm.binding.move_next bracketright
+bindsym $mod+$i3-wm.binding.prev workspace prev
+bindsym $mod+$i3-wm.binding.next workspace next
+set_from_resource $i3-wm.binding.move_prev i3-wm.binding.move_prev Shift+bracketleft
+set_from_resource $i3-wm.binding.move_next i3-wm.binding.move_next Shift+bracketright
+bindsym $mod+$i3-wm.binding.move_prev move container to workspace prev; workspace prev
+bindsym $mod+$i3-wm.binding.move_next move container to workspace next; workspace next
+
 ## Modify // Containing Workspace // <><Ctrl><Shift> ↑ ↓ ← → ##
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
 bindsym $mod+Ctrl+Shift+Down move workspace to output down
