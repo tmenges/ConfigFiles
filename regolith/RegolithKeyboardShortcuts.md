@@ -8,7 +8,7 @@
 | `rofi -show run` | $mod+Shift+Space |
 | `rofi -show window` | $mod+Ctrl+Space |
 | `exec /usr/bin/remotoire-toggle` | $mod+Shift+Question |
-| `rofi -show find -modi find: /usr/share/rofi/modi/finder.sh` | $mod1+Alt+Space |
+| `rofi -show find -modi find: /usr/share/rofi/modi/finder.sh` | $mod+Alt+Space |
 | `rofi -show look -modi look: /usr/share/rofi/modi/look-selector.sh` | $mod+Alt+l |
 
 ### Navigate Relative Window
@@ -54,7 +54,7 @@
 | Command | Keyboard Shortcut |
 | --- | --- |
 | `split vertical` | $mod+v |
-| `split horizontal` | $mod+g` |
+| `split horizontal` | $mod+g |
 | `split toggle` | $mod-Backspace |
 | `fullscreen toggle` | $mod+f |
 | `floating toggle` | $mod+Shift+f |
