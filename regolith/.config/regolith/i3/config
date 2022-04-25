@@ -285,9 +285,8 @@ bindsym $mod+$i3-wm.binding.focus_toggle focus mode_toggle
 
 ## Modify // Window Layout Mode // <> t ##
 set_from_resource $i3-wm.binding.layout_mode i3-wm.binding.layout_mode t
-bindsym $mod+$i3-wm.binding.layout_mode layout toggle tabbed splith splitv
+bindsym $mod+$i3-wm.binding.layout_mode layout toggle tabbed stacking splith splitv
 
-bindsym $mod+Ctrl+t layout toggle tabbed stacking splith splitv
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -421,7 +420,7 @@ set_from_resource $i3-wm.binding.display i3-wm.binding.display d
 set_from_resource $i3-wm.program.display i3-wm.program.display gnome-control-center --class=floating_window display
 bindsym $mod+$i3-wm.binding.display exec $i3-wm.program.display
 
-## Modify // Wifi Settings // <> w ##
+## Modify // Wifi Settings // <><Ctrl> w ##
 set_from_resource $i3-wm.binding.wifi i3-wm.binding.wifi Ctrl+w
 set_from_resource $i3-wm.program.wifi i3-wm.program.wifi gnome-control-center --class=floating_window wifi
 bindsym $mod+$i3-wm.binding.wifi exec $i3-wm.program.wifi
@@ -431,7 +430,7 @@ set_from_resource $i3-wm.binding.bluetooth i3-wm.binding.bluetooth b
 set_from_resource $i3-wm.program.bluetooth i3-wm.program.bluetooth gnome-control-center --class=floating_window bluetooth
 bindsym $mod+$i3-wm.binding.bluetooth exec $i3-wm.program.bluetooth
 
-## Modify // Sound Settings // <> s ##
+## Modify // Sound Settings // <><Ctrl> s ##
 set_from_resource $i3-wm.binding.sound i3-wm.binding.sound Ctrl+s
 set_from_resource $i3-wm.program.sound i3-wm.program.sound gnome-control-center --class=floating_window sound
 bindsym $mod+$i3-wm.binding.sound exec $i3-wm.program.sound

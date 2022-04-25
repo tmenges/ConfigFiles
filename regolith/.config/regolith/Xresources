@@ -13,3 +13,5 @@ i3-wm.client.focused.color.indicator: #ff0000
 !i3-wm.client.focused.color.text: #0000ff
 i3-wm.client.focused.color.child_border: #0000ff
 
+i3-wm.workspace.01.name: 1: Main
+
