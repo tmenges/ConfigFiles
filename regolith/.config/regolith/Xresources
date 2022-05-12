@@ -21,3 +21,8 @@ i3xrocks.value.font: "Source Code Pro Medium 11"
 ## Workspace names
 i3-wm.workspace.01.name: 1: Main
 
+# Disable regolith from handling backgrounds
+# Also needed to run the command:
+#   gsettings set org.gnome.gnome-flashback.desktop draw-background false
+gnome.wallpaper:
+
