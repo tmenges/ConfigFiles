@@ -51,4 +51,5 @@ plugin/packer_compiled.lua
 .zcomp*
 .zsh_history
 .zsh_history
+.zsh_sessions
 plugins/
