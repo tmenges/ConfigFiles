@@ -45,12 +45,11 @@ luac.out
 *.hex
 
 
-plugin/packer_compiled.lua
 
 .p10k.zsh
 .zcomp*
 .zsh_history
 .zsh_history
-plugins/
+.zsh_sessions
 vim/.vim/.netrwhist
 regolith/.config/regolith/flags/

@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="vim"
+export VISUAL="vim"
 
 export DEFAULT_USER=tony
 
@@ -39,10 +39,11 @@ case $(hostname -s) in
     export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
     export JAVA_HOME_11=$(/usr/libexec/java_home -v11)
     export JAVA_HOME_13=$(/usr/libexec/java_home -v13)
-    export JAVA_HOME=$JAVA_HOME_13
+    export JAVA_HOME_17=$(/usr/libexec/java_home -v17)
+    export JAVA_HOME=$JAVA_HOME_17
 
-    export GOPATH=$HOME/Development/Workspaces/go
-    export GOROOT=/usr/local/Cellar/go/1.17.8
+    #export GOPATH=$HOME/Development/Workspaces/go
+    export GOROOT=/usr/local/go
 
     source $HOME/.ghcup/env
     export ANACONDAHOME=$HOME/opt/anaconda3
