@@ -2,15 +2,25 @@
 
 source $ZDOTDIR/zsh-functions
 
+# Nodejs
+NODEJS_VERSION=v18.15.0
+DISTRO=linux-x64
+
 case $(hostname -s) in
   "penguin-traveler")
+    export M2_HOME=$HOME/Tools/mvn/current
+    export SPRING_HOME=$HOME/Tools/SpringBootCli/spring-2.5.0
+
     pathremove $HOME/bin
     pathadd $TEXLIVE/bin/x86_64-linux before
     #pathadd $GNATHOME/gnatstudio/bin before
+    pathadd $M2_HOME/bin before
+    pathadd $SPRING_HOME/bin before
     pathadd $QTHOME/bin before
     pathadd $PGHOME/bin before
     pathadd $GOROOT/bin before
     pathadd $GOPATH/bin before
+    pathadd /usr/local/lib/nodejs/node-$NODEJS_VERSION-$DISTRO/bin before
     pathadd $HOME/.cargo/bin before
     pathadd $NPM_PACKAGES/bin before
     pathadd $HOME/.emacs.d/bin before

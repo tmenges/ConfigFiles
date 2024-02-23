@@ -29,7 +29,7 @@ case $(hostname -s) in
     export NPM_PACKAGES=${HOME}/.npm-packages
     export GOPATH=$HOME/Development/Workspaces/go
     export PGHOME=/usr/local/pgsql
-    export GOROOT=/usr/local/go
+    export GOROOT=/usr/local/go/current
     export QTHOME=/usr/local/Qt
     export GNATHOME=/usr/local/gnat-2020
     #export DOCKER_HOST=tcp://localhost:2375
