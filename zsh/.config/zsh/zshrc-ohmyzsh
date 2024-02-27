@@ -36,8 +36,6 @@ source $ZDOTDIR/zsh-functions
 source $ZDOTDIR/zsh-options
 source $ZDOTDIR/zsh-aliases
 
-eval "$(zoxide init zsh)"
-
 # Turn on vi mode
 bindkey -v
 bindkey '^u' backward-kill-line
@@ -47,7 +45,7 @@ if [[ "$OSTYPE" = darwin* ]]; then
     alias ls='ls -G'
     test -e "$HOME/.iterm2_shell_integration.zsh" && source "$HOME/.iterm2_shell_integration.zsh"
 else
-#    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    eval "$(zoxide init zsh)"
 fi
 
 # . /Users/tony/anaconda3/etc/profile.d/conda.sh  # commented out by conda initialize
