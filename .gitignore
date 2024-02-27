@@ -55,3 +55,6 @@ plugin/packer_compiled.lua
 plugins/
 vim/.vim/.netrwhist
 regolith/.config/regolith/flags/
+
+nvim/.config/nvim/lazy-lock.json
+nvim/.config/nvim/lazyvim.json
