@@ -36,10 +36,11 @@ source $ZDOTDIR/zsh-functions
 source $ZDOTDIR/zsh-options
 source $ZDOTDIR/zsh-aliases
 
+eval "$(zoxide init zsh)"
+
 # Turn on vi mode
 bindkey -v
 bindkey '^u' backward-kill-line
-
 
 if [[ "$OSTYPE" = darwin* ]]; then
     # Override oh-my-zsh's use of gls if it is available (see .oh-my-zsh/lib/theme-and-appearance.zsh)
